@@ -1,7 +1,7 @@
 const mongoose =require('mongoose')
 const validator =require('validator')
 
-const Tasks= mongoose.model('Tasks',{
+const taskSchema = new mongoose.Schema({
     descriptions : {
         type: String,
         require: true
@@ -11,4 +11,16 @@ const Tasks= mongoose.model('Tasks',{
     }
 
 })
+
+taskSchema.pre('save', async function(next){
+    const task=this
+
+    if(task==='') {
+        console.log('No task found')
+    }
+    next()
+
+})
+
+const Tasks= mongoose.model('Tasks',taskSchema)
 module.exports=Tasks

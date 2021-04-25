@@ -9,7 +9,7 @@ import {React,Component} from 'react'
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { apiResponse: "" };
+    this.state = { apiResponse: [] };
 }
 
 callAPI() {
@@ -23,6 +23,8 @@ componentWillMount() {
 }
 
   render() {
+    //var jsonData=JSON.parse(this.state.apiResponse)
+    //console.log(jsonData)
     return (
       <div className="App">
         <Navbar dark color="primary">
@@ -32,7 +34,7 @@ componentWillMount() {
             
           </div>
         </Navbar>
-        <p>{this.state.apiResponse}</p>
+        {this.state.apiResponse}
       </div>
     );
   }

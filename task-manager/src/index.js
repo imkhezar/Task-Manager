@@ -8,7 +8,7 @@ const taskRouter = require ('./routers/tasks')
 
 const app =express()
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 // app.use((req,res,next)=>{
 //     if(req.method==='GET'){
@@ -19,9 +19,9 @@ const port = process.env.PORT || 3000
 //     }
 // })
 
-app.use((req,res,next)=>{
-    res.status(503).send('Maintance Mode')
-})
+// app.use((req,res,next)=>{
+//     res.status(503).send('Maintance Mode')
+// })
 
 app.use(express.json())
 app.use(userRouter)
@@ -36,13 +36,13 @@ app.listen(port, ()=>{
 const jwt = require('jsonwebtoken')
 
 
-// const myFunction= async ()=>{
-//     //const token=jwt.sign({_id:'abc123'},'thisismynewcourse')
-//     //console.log(token)
-//     const token = jwt.sign({_id:'abc123'},'thisismynewcourse',{expiresIn:'7 days'})
-//     console.log(token)
+const myFunction= async ()=>{
+    //const token=jwt.sign({_id:'abc123'},'thisismynewcourse')
+    //console.log(token)
+    const token = jwt.sign({_id:'abc123'},'thisismynewcourse',{expiresIn:'7 days'})
+    console.log(token)
 
-//     const data=jwt.verify(token,'thisismynewcourse')
-//     console.log(data)
-// }
-// myFunction()
+    const data=jwt.verify(token,'thisismynewcourse')
+    console.log(data)
+}
+myFunction()

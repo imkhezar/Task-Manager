@@ -31,9 +31,14 @@ router.post('/users/login',async (req,res)=>{
     }
 })
 //get users
-router.get('/users/me',auth, async (req,res)=>{
-
-    res.send(req.user) 
+router.get('/users/', async (req,res)=>{
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    try{
+        const users= await User.find({})
+        res.status(201).send(users)
+    }catch(e){
+        res.status(404).send()
+    }
 
 })
 //get user by id

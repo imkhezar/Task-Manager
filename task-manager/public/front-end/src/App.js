@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import {React,Component} from 'react'
-import User from './components/header'
+//import User from './components/Practice-header'
+import Header from './components/Header'
 
 
 
@@ -14,17 +13,7 @@ class App extends Component {
     //var jsonData=JSON.parse(this.state.apiResponse)
     //console.log(jsonData)
     return (
-      <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Task Manager</NavbarBrand>
-            
-            
-          </div>
-        </Navbar>
-        <User/>
-        
-      </div>
+     <Header/>
     );
   }
 }

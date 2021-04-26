@@ -1,63 +1,24 @@
-import React,{Component} from 'react'
-import {Media} from 'reactstrap';
+import { Navbar, NavbarBrand } from 'reactstrap';
+import {React,Component} from 'react'
 
-//Not this components is for practice only , I just reterived data from database to react components
-class User extends Component{
-    
-    constructor(props){
-        super(props);
+class Header extends Component{
 
-        this.state ={
-            users:[
-                
-            ]
-        }
+render() {
+    //var jsonData=JSON.parse(this.state.apiResponse)
+    //console.log(jsonData)
+    return (
+      <div className="App">
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/">Task Manager</NavbarBrand>
+            
+            
+          </div>
+        </Navbar>
+     
         
-    }
-    componentDidMount() {
-        this.setState({loading: true})
-        fetch("http://localhost:3001/users/")
-          .then(response => response.json())
-          .then(data => {
-            this.setState({
-              users: data
-            })
-          })
-      }
-
-    render(){
-        const usersProfile=this.state.users.map((user)=>{
-
-            return(
-                <div key={user._id} className="col-12 mt-5">
-                    <Media tag="li">
-                        <Media body className="ml-5">
-                            <Media heading>
-                                {user.name}
-                                
-                            </Media>
-                            <p>{user.email}</p>
-
-                        </Media>
-                    </Media>
-                </div>
-            );
-        })
-
-        return(
-            <div className="container">
-                <div className="row">
-                    <Media list>
-                        {usersProfile}
-                    </Media>
-
-                </div>
-            </div>
-        
-            );
-    }
-    
-
+      </div>
+    );
+  }
 }
-
-export default User;
+export default Header;

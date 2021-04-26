@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {Media} from 'reactstrap';
 
-
+//Not this components is for practice only , I just reterived data from database to react components
 class User extends Component{
     
     constructor(props){

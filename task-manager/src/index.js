@@ -28,7 +28,7 @@ app.use(userRouter)
 app.use(taskRouter)
 
 app.listen(port, ()=>{  
-    console.log('Server is running in on port 3000')
+    console.log('Server is running in on port '+port)
 })
 
 //const bcrypt = require('bcryptjs')

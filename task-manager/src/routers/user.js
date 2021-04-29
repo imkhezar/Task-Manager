@@ -23,11 +23,12 @@ router.post('/users/login',async (req,res)=>{
     try{
         const user= await User.findByCredentails(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
-        //console.log(token)
-        //generateAuthToken
-       // res.send({user,token})
+
+        console.log(token)
+        //generateAuthToken()
+        res.status(200).send({user,token})
     }catch(e){
-        res.status(400).send('Something went wrong')
+        res.status(400).send('Something went wrong'+e)
     }
 })
 //get users

@@ -19,9 +19,9 @@ const port = process.env.PORT || 3000
 //     }
 // })
 
-app.use((req,res,next)=>{
-    res.status(503).send('Maintance Mode')
-})
+// app.use((req,res,next)=>{
+//     res.status(503).send('Maintance Mode')
+// })
 
 app.use(express.json())
 app.use(userRouter)

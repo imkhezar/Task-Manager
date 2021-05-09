@@ -14,7 +14,7 @@ req.token= token
 req.user = user
 next()
 } catch (e) {
-res.status(401).send({ error: 'Please authenticate.' }+'Actual Error cd'+e)
+res.status(401).send({ error: 'Please authenticate.' })
 //res.send('actual error '+e)
 
 }

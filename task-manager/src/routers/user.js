@@ -26,7 +26,7 @@ router.post('/users/login',async (req,res)=>{
 
         console.log(token)
         //generateAuthToken()
-        res.status(200).send({user,token})
+        res.status(200).send({user:user.getPublicProfile(),token})
     }catch(e){
         res.status(400).send('Something went wrong'+e)
     }

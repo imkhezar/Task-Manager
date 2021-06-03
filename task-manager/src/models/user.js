@@ -51,7 +51,10 @@ const userSchema = new mongoose.Schema({
     
 })
 
-userSchema.methods.getPublicProfile = function(){
+//get user object it will contain all the user data incl password\n
+//and tokens
+//remove passwords and token and return
+userSchema.methods.toJSON = function(){
     const user=this
     const userObject= user.toObject()
     delete userObject.password

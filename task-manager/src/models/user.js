@@ -50,6 +50,12 @@ const userSchema = new mongoose.Schema({
     
     
 })
+//not store on database but for mongoose to find 
+userSchema.virtual('tasks',{
+    ref:'Tasks',
+    localField:'_id',
+    foreignField:'owner'
+})
 
 //get user object it will contain all the user data incl password\n
 //and tokens

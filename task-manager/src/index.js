@@ -47,3 +47,17 @@ const jwt = require('jsonwebtoken')
 // }
 // myFunction()
 
+const Task = require('./models/task')
+//const User = require('./models/user')
+
+const main = async ()=>{
+    // const task= await Task.findById('60b833eb886fae24f8e93728')
+    // await task.populate('owner').execPopulate()
+    // console.log(task.owner)
+
+// const user = await  User.findById('60b83273ee165c1934f36356')
+// await user.populate('tasks').execPopulate()
+// console.log(user.tasks)
+}
+
+main()

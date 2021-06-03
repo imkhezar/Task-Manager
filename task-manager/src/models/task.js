@@ -7,7 +7,15 @@ const taskSchema = new mongoose.Schema({
         require: true
     },
     completed : {
-        type : Boolean
+        type : Boolean,
+        require:true,
+        default: false,
+        
+    },
+    owner:{
+        type : mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'User'
     }
 
 })

@@ -47,7 +47,3 @@ const jwt = require('jsonwebtoken')
 // }
 // myFunction()
 
-const pet ={
-    name:"mai"
-}
-console.log(JSON.stringify(pet))
